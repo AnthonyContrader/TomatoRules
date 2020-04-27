@@ -48,7 +48,7 @@ private int id;
 	
 	@Override   //trasforma l'oggetto in un stringa
 	public String toString() {
-		return id + "\t"  + name + "\t\t" + time;
+		return id + "\t"  + name + "\t\t" + time + "\t\t";
 		
 	}
 }

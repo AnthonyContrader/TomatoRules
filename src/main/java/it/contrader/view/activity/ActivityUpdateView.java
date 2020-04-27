@@ -35,7 +35,7 @@ public class ActivityUpdateView extends AbstractView {
 	@Override
 	public void showOptions() {
 		try {
-			System.out.println("Inseriscil'id dell'utente:");
+			System.out.println("Inserisci l'id dell'utente:");
 			id = Integer.parseInt(getInput());
 			System.out.println("Inserisci name");
 			name = getInput();

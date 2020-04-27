@@ -9,7 +9,7 @@ import it.contrader.model.Activity;
 
 public class ActivityDAO {
 	
-	private final String QUERY_ALL = "SELECT * FROM activity ";  //final atttributo che applichi alla classe. Devi eseguire questo comando
+	private final String QUERY_ALL = "SELECT * FROM activity";  //final atttributo che applichi alla classe. Devi eseguire questo comando
 	private final String QUERY_CREATE = "INSERT INTO activity (name, time) VALUES (?,?)";
 	private final String QUERY_READ = "SELECT * FROM activity WHERE id=?";
 	private final String QUERY_UPDATE = "UPDATE activity SET name=?, time=? WHERE id=?";
@@ -30,8 +30,8 @@ public class ActivityDAO {
 				int id = resultSet.getInt("id");
 				String name = resultSet.getString("name");
 	/* !!*/		int time = resultSet.getInt("time");
-				activity = new Activity(name, time);
-				activity.setId(id);
+				activity = new Activity(name,time);
+				activity.setId(id);  
  			    activityList.add(activity); //aggiungi ogni oggetto all'entita con queli attributi
 			}
 		} catch (SQLException e) {  //genera eccezioni

@@ -72,7 +72,7 @@ public class ActivityController implements Controller {
 			request = new Request();
 			request.put("mode", "mode");
 			//Rimanda alla view con la risposta
-			MainDispatcher.getInstance().callView(sub_package + "ActivityInsert" , request);
+			MainDispatcher.getInstance().callView(sub_package + "ActivityInsert", request);
 			break;
 			
 		//Arriva qui dalla ActivityDeleteView. Estrae l'id utente da cancellare e lo passa al Service
@@ -82,7 +82,7 @@ public class ActivityController implements Controller {
 			activityService.delete(id);
 			request = new Request();
 			request.put("mode", "mode");
-			MainDispatcher.getInstance().callView(sub_package + "ActivityDelete" , request);
+			MainDispatcher.getInstance().callView(sub_package + "ActivityDelete", request);
 			break;
 			
 		// Arriva qui dalla ActivityUpdateView
@@ -95,14 +95,14 @@ public class ActivityController implements Controller {
 			activityService.update(activitytoupdate);
 			request = new Request();
 			request.put("mode", "mode");
-			MainDispatcher.getInstance().callView(sub_package + "ActivityUpdate" , request);
+			MainDispatcher.getInstance().callView(sub_package + "ActivityUpdate", request);
 			break;
 		//Arriva qui dalla ActivityView. Invoca il Service e invia alla ActivityView il risultato da mostrare
 		case "ACTIVITYLIST":
 			List<ActivityDTO> activitysDTO = activityService.getAll();
 			//Impacchetta la request con la lista dell'activity
-			request.put("activity", activitysDTO);
-			MainDispatcher.getInstance().callView("Activity" , request);
+			request.put("activitys", activitysDTO);
+			MainDispatcher.getInstance().callView("Activity", request);
 			break;
 		
 		//Esegue uno switch sulla base del comando inserito dall'utente e reindirizza tramite il Dispatcher alla View specifica per ogni operazione
@@ -113,35 +113,35 @@ public class ActivityController implements Controller {
 			switch (choice.toUpperCase()) {
 			
 			case "L":
-				MainDispatcher.getInstance().callView(sub_package + "ActivityRead" , null);
+				MainDispatcher.getInstance().callView(sub_package + "ActivityRead", null);
 				break;
 				
 			case "I":
-				MainDispatcher.getInstance().callView(sub_package + "ActivityInsert" , null);
+				MainDispatcher.getInstance().callView(sub_package + "ActivityInsert", null);
 				break;
 				
 			case "M":
-				MainDispatcher.getInstance().callView(sub_package + "ActivityUpdate" , null);
+				MainDispatcher.getInstance().callView(sub_package + "ActivityUpdate", null);
 				break;
 			
 			case "C":
-				MainDispatcher.getInstance().callView(sub_package + "ActivityDelete" , null);
+				MainDispatcher.getInstance().callView(sub_package + "ActivityDelete", null);
 				break;
 				
 			case "E":
-				MainDispatcher.getInstance().callView("Login" , null);
+				MainDispatcher.getInstance().callView("Login", null);
 				break;
 				
 			case "B":
-				MainDispatcher.getInstance().callView("HomeAdmin" , null);
+				MainDispatcher.getInstance().callView("HomeAdmin", null);
 				break;
 				
 			default:
-				MainDispatcher.getInstance().callView("Login" , null);
+				MainDispatcher.getInstance().callView("Login", null);
 			}
 			
 		default:
-			MainDispatcher.getInstance().callView("Login" , null);	
+			MainDispatcher.getInstance().callView("Login", null);	
 		}
 	}
 	

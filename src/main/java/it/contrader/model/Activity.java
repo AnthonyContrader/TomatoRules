@@ -55,7 +55,7 @@ public class Activity {
 	
 	@Override   //trasforma l'oggetto in un stringa
 	public String toString() {
-		return id + "\t"  + name + "\t\t" + time;
+		return id + "\t"  + name + "\t\t" + time + "\t\t";
 	}
 	
 	@Override   //confrontare gli oggetti in una stringa
@@ -74,6 +74,7 @@ public class Activity {
 				return false;
 		} else if(!name.equals(other.name))
 			return false;
+		
 		if (time != other.time)    //chiedere!!
 			return false;
 		return true;
