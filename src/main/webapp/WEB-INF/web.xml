@@ -33,6 +33,16 @@
     <url-pattern>/UserServlet</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<description></description>
+  	<display-name>ActivityServlet</display-name>
+  	<servlet-name>ActivityServlet</servlet-name>
+  	<servlet-class>it.contrader.servlets.ActivityServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ActivityServlet</servlet-name>
+    <url-pattern>/ActivityServlet</url-pattern>
+  </servlet-mapping>
   
   <servlet>
   	<description></description>
