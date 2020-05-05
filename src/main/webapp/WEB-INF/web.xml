@@ -55,11 +55,15 @@
     <url-pattern>/CategoryServlet</url-pattern>
   </servlet-mapping>
   
-   
-   
-   
-   
-   
-   
-   
+  <servlet>
+  	<description></description>
+  	<display-name>ToolServlet</display-name>
+  	<servlet-name>ToolServlet</servlet-name>
+  	<servlet-class>it.contrader.servlets.ToolServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ToolServlet</servlet-name>
+    <url-pattern>/ToolServlet</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
