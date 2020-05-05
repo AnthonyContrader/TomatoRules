@@ -59,7 +59,7 @@
 			<label for="category">Name</label>
 		</div>
 		<div class="col-75">
-			<input type="text" id="category" name="name" placeholder="inserisci name">
+			<input type="text" id="category" name="name" placeholder="nome categoria">
 		</div>
 	</div>
 	<div class="row">
@@ -67,7 +67,7 @@
 			<label for="desc">Description</label>
 		</div>
 		<div class="col-75">
-			<input type="text" id="desc" name="description" placeholder="inserisci description">
+			<input type="text" id="desc" name="description" placeholder="descrizione categoria">
 		</div>
 	</div>
 	

@@ -29,9 +29,12 @@
 <div class="main">
 <h1>Welcome ${user.getUsername()}</h1>
 
-SPERIAMOFUNZIONI. SPERIAMOFUNZIONI. SPERIAMOFUNZIONI.<br> 
-SPERIAMOFUNZIONI. SPERIAMOFUNZIONI. SPERIAMOFUNZIONI.<br>
-
+La Tecnica del Pomodoro nasce con lo scopo primario di insegnare a considerare il tempo, 
+invece che come un nemico capace di generare stress e tensioni 
+(soprattutto in presenza di scadenze), 
+come un valido alleato pronto a consentirci di realizzare qualunque genere di attività 
+nel modo desiderato, 
+migliorando al contempo il processo di lavoro e studio.
 
 
 </div>

@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="footer">
-Stuff about copyright, legal notes and other useless informations...
+Realizzato grazie alla collaborazione di Daniele, Alessandro e Angelo!
 </div>
 </body>
 </html>

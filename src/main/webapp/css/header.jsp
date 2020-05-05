@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<div class="header">SAMPLE Project
+<div class="header">T<img alt="O" height=108 width=108 src="css/Pomodoro.png">MAT<img alt="O" height=108 width=108 src="css/Pomodoro.png"> RULES
 </div>
 
 
