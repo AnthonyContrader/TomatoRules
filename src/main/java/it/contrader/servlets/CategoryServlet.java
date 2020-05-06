@@ -43,6 +43,7 @@ public class CategoryServlet extends HttpServlet {
 		CategoryDTO dto;
 		ToolDTO tooldto;
 		int id;
+		int idtool;
 		boolean ans;
 		
 		switch (mode.toUpperCase()) {
@@ -55,8 +56,8 @@ public class CategoryServlet extends HttpServlet {
 		case "READ":
 			id = Integer.parseInt(request.getParameter("id"));
 			dto = service.read(id);
-			int toolid = dto.getIdtool();
-			tooldto = toolservice.read(toolid); 
+			idtool = dto.getIdtool();
+			tooldto = toolservice.read(idtool); 
 			request.setAttribute("dto", dto);
 			request.setAttribute("tooldto", tooldto);
 			getTool(request);
@@ -72,7 +73,7 @@ public class CategoryServlet extends HttpServlet {
 		case "INSERT":
 			String name = request.getParameter("name").toString();
 			String description = request.getParameter("description").toString();
-			int idtool = Integer.parseInt(request.getParameter("idtool").toString());
+			idtool = Integer.parseInt(request.getParameter("idtool").toString());
 			dto = new CategoryDTO (name,description,idtool);
 			ans = service.insert(dto);
 			request.setAttribute("ans", ans);
