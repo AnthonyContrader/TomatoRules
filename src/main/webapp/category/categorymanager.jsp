@@ -26,6 +26,7 @@
 	<% 
 		List<CategoryDTO> list = (List<CategoryDTO>) request.getAttribute("list");
 		List<ToolDTO> listTool = (List<ToolDTO>) request.getAttribute("list_T");
+		String toolname;
 	%>
 	
 <br>
@@ -35,12 +36,21 @@
 			<th>Id</th>
 			<th>Name</th>
 			<th>Description</th>
-			<th>Idtool</th>
+			<th>Tool</th>
 			<th></th>
 			<th></th>
 		</tr>
 		<% 
 			for (CategoryDTO c : list) {
+				toolname = "";
+				for (ToolDTO t : listTool) {
+					int x = c.getIdtool();
+					if (c.getIdtool() == t.getId()) {
+						System.out.println(c.getIdtool());
+						toolname = t.getName();
+						break;
+					}
+				}
 		%>
 		<tr>
 			<td><%=c.getId() %></td>
@@ -48,7 +58,7 @@
 					<%=c.getName()%>
 			</a></td>
 			<td><%=c.getDescription()%></td>
-			<td><%=c.getIdtool()%></td>
+			<td><%=toolname%></td>
 			<td><a href=CategoryServlet?mode=read&update=true&id=<%=c.getId()%>>Edit</a>
 			</td>
 			<td><a href=CategoryServlet?mode=delete&id=<%=c.getId()%>>Delete</a>
