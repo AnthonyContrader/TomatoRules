@@ -7,20 +7,24 @@ public class Category {
 	private String name;
 	
 	private String description; 
+	
+	private int idtool; 
 
     public Category() { // costruttori
     	
     }
     
-    public Category (String name, String description ) {
+    public Category (String name, String description, int idtool) {
     	this.name = name;
     	this.description = description;
+    	this.idtool = idtool;
     }
     
-    public Category (int id, String name, String description) {
+    public Category (int id, String name, String description, int idtool) {
     	this.id = id;
     	this.name = name;
     	this.description= description;
+    	this.idtool = idtool;
     }
     
     // metodi
@@ -48,10 +52,18 @@ public class Category {
     	this.description = description;
     }
     
+    public int getIdtool() {
+    	return this.idtool;
+    }
+    
+    public void setIdtool(int idtool) {
+    	this.idtool = idtool;
+    }
+    
     // Trasforma un oggetto in una stringa
     @Override
     public String toString() {
-    	return id + "\t" + name + "\t\t" + description + "\t\t";
+    	return id + "\t" + name + "\t\t" + description + "\t\t" + idtool + "\t\t";
     }
     
     // confronto degli oggetti 
@@ -77,6 +89,10 @@ public class Category {
     			return false;
     	} else if (!description.equals(other.description))
     		return false;
+    	
+    	if (idtool != other.idtool)
+    		return false;
+    	
     	return true;
     }
     

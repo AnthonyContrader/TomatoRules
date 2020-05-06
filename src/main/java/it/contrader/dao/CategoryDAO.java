@@ -12,9 +12,9 @@ import it.contrader.model.Category;
 public class CategoryDAO implements DAO<Category> {
 	
 	private final String QUERY_ALL = "SELECT * FROM category";
-	private final String QUERY_CREATE = "INSERT INTO category (name, description) VALUES (?,?)";
+	private final String QUERY_CREATE = "INSERT INTO category (name, description, idtool) VALUES (?,?,?)";
 	private final String QUERY_READ = "SELECT * FROM category WHERE id=?";
-	private final String QUERY_UPDATE = "UPDATE category SET name=?, description=? WHERE id=?";
+	private final String QUERY_UPDATE = "UPDATE category SET name=?, description=?, idtool=? WHERE id=?";
 	private final String QUERY_DELETE = "DELETE FROM category WHERE id=?";
 
 	public CategoryDAO() {
@@ -32,7 +32,8 @@ public class CategoryDAO implements DAO<Category> {
 				int id = resultSet.getInt("id");
 				String name = resultSet.getString("name");
 				String description = resultSet.getString("description");
-				category = new Category(id,name, description);				
+				int idtool = resultSet.getInt("idtool");
+				category = new Category(id,name, description, idtool);				
 				categoryList.add(category); 
 			}
 		} catch (SQLException e) {
@@ -47,6 +48,7 @@ public class CategoryDAO implements DAO<Category> {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
 			preparedStatement.setString(1, categoryToInsert.getName());
 			preparedStatement.setString(2, categoryToInsert.getDescription());
+			preparedStatement.setInt(3, categoryToInsert.getIdtool());
 			preparedStatement.execute();
 			return true;
 		} catch (SQLException e) {
@@ -64,11 +66,13 @@ public class CategoryDAO implements DAO<Category> {
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
 			String name, description;
+			int idtool;
 
 			name = resultSet.getString("name");
 			description = resultSet.getString("description");
+			idtool = resultSet.getInt("idtool");
 			
-			Category category = new Category(name, description);
+			Category category = new Category(name, description, idtool);
 			category.setId(resultSet.getInt("id"));
 
 			return category;
@@ -95,12 +99,16 @@ public class CategoryDAO implements DAO<Category> {
 				if (categoryToUpdate.getDescription() == null || categoryToUpdate.getDescription().equals("")) {
 					categoryToUpdate.setDescription(categoryRead.getDescription());
 				}
-
+				
+				if (categoryToUpdate.getIdtool() == 0) {
+					categoryToUpdate.setIdtool(categoryRead.getIdtool());
+				}
 				
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 				preparedStatement.setString(1, categoryToUpdate.getName());
 				preparedStatement.setString(2, categoryToUpdate.getDescription());
-				preparedStatement.setInt(3, categoryToUpdate.getId());
+				preparedStatement.setInt(3, categoryToUpdate.getIdtool());
+				preparedStatement.setInt(4, categoryToUpdate.getId());
 				int a = preparedStatement.executeUpdate();
 				if (a > 0)
 					return true;

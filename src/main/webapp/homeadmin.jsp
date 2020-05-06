@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1" import="java.util.List"
 	import="it.contrader.dto.UserDTO"
 	import="it.contrader.dto.CategoryDTO"
+	import="it.contrader.dto.ToolDTO"
 	
 	%>
 <!DOCTYPE html>

@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="java.util.List"
-    import="it.contrader.dto.CategoryDTO" %>
+    import="it.contrader.dto.CategoryDTO" 
+    import="it.contrader.dto.ToolDTO" 
+    
+    %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,14 +25,17 @@
 <div class="main">
 	<% 
 		List<CategoryDTO> list = (List<CategoryDTO>) request.getAttribute("list");
+		List<ToolDTO> listTool = (List<ToolDTO>) request.getAttribute("list_T");
 	%>
 	
 <br>
 
 	<table>
 		<tr>
+			<th>Id</th>
 			<th>Name</th>
 			<th>Description</th>
+			<th>Idtool</th>
 			<th></th>
 			<th></th>
 		</tr>
@@ -37,10 +43,12 @@
 			for (CategoryDTO c : list) {
 		%>
 		<tr>
+			<td><%=c.getId() %></td>
 			<td><a href=CategoryServlet?mode=read&id=<%=c.getId()%>>
 					<%=c.getName()%>
 			</a></td>
 			<td><%=c.getDescription()%></td>
+			<td><%=c.getIdtool()%></td>
 			<td><a href=CategoryServlet?mode=read&update=true&id=<%=c.getId()%>>Edit</a>
 			</td>
 			<td><a href=CategoryServlet?mode=delete&id=<%=c.getId()%>>Delete</a>
@@ -70,6 +78,24 @@
 			<input type="text" id="desc" name="description" placeholder="descrizione categoria">
 		</div>
 	</div>
+	<div class="row">
+		<div class="col-25">
+			<label for="type">Select Tool</label>
+		</div>
+		<div class="col-75">
+			<select id="tool" name="idtool" required>
+				<option value="" disabled selected>Select Tools</option>
+				<%
+					for (ToolDTO t : listTool) {
+				%>
+				<option value="<%=t.getId()%>"><%=t.getName()%></option>
+				<% 
+					}
+				%>
+			</select>
+		</div>
+	</div>
+	
 	
 		<button type="submit" >Insert</button>
 </form>

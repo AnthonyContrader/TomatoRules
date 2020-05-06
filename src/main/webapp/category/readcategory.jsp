@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="it.contrader.dto.CategoryDTO"%>
+    pageEncoding="ISO-8859-1" import="it.contrader.dto.CategoryDTO"
+    import="it.contrader.dto.ToolDTO"
+    %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,17 +19,22 @@
 <br>
 
 <div class="main">
-<%CategoryDTO c = (CategoryDTO) request.getAttribute("dto");%>
+<%CategoryDTO c = (CategoryDTO) request.getAttribute("dto");
+
+	ToolDTO t = (ToolDTO) request.getAttribute("tooldto");
+%>
 
 
 <table>
 	<tr>
 		<th>Name</th>
 		<th>Description</th>
+		<th>Tool</th>
 	</tr>
 	<tr>
 		<td><%=c.getName()%></td>
 		<td><%=c.getDescription()%></td>
+		<td><%=t.getName()%></td>
 	</tr>
 </table>
 
