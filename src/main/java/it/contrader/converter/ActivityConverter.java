@@ -21,7 +21,7 @@ public class ActivityConverter implements Converter<Activity, ActivityDTO> {
 	 */
 	@Override
 	public ActivityDTO toDTO(Activity activity) {
-		ActivityDTO activityDTO = new ActivityDTO(activity.getId(), activity.getName(), activity.getTime());
+		ActivityDTO activityDTO = new ActivityDTO(activity.getId(), activity.getName(), activity.getTime(), activity.getRest());
 		return activityDTO;		
 	}
 	
@@ -31,7 +31,7 @@ public class ActivityConverter implements Converter<Activity, ActivityDTO> {
 	 */
 	@Override
 	public Activity toEntity(ActivityDTO activityDTO) {
-		Activity activity = new Activity(activityDTO.getId(), activityDTO.getName(), activityDTO.getTime());
+		Activity activity = new Activity(activityDTO.getId(), activityDTO.getName(), activityDTO.getTime(), activityDTO.getRest());
 		return activity;
 	}
 	

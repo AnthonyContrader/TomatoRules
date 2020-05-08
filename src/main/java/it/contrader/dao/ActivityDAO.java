@@ -15,10 +15,19 @@ import it.contrader.model.Activity;
  */
 public class ActivityDAO implements DAO<Activity> {
 	
-	private final String QUERY_ALL = "SELECT * FROM activity";  
-	private final String QUERY_CREATE = "INSERT INTO activity (name, time) VALUES (?,?)";
+	/*private final String QUERY_ALL = "SELECT u.id as 'id',"
+			+ "u.name as 'name',"
+			+ "u.time as 'time',"
+			+ "u.rest as 'rest',"
+			+ "c.name as 'nrest',"
+			+ "FROM activity u JOIN category c ON c.id=u.rest;"
+			+ ""
+			+ "  ";
+			*/
+	private final String QUERY_ALL = "SELECT * FROM activity"; 
+	private final String QUERY_CREATE = "INSERT INTO activity (name, time, rest) VALUES (?,?,?)";
 	private final String QUERY_READ = "SELECT * FROM activity WHERE id=?";
-	private final String QUERY_UPDATE = "UPDATE activity SET name=?, time=? WHERE id=?";
+	private final String QUERY_UPDATE = "UPDATE activity SET name=?, time=?, rest=? WHERE id=?";
 	private final String QUERY_DELETE = "DELETE FROM activity WHERE id=?";
 	
 	public ActivityDAO() {   //costruttore vuoto
@@ -36,7 +45,8 @@ public class ActivityDAO implements DAO<Activity> {
 				int id = resultSet.getInt("id");
 				String name = resultSet.getString("name");
 	     		int time = resultSet.getInt("time");
-				activity = new Activity(name,time);
+	     		int rest = resultSet.getInt("rest");
+				activity = new Activity(name,time, rest );
 				activity.setId(id);  
  			    activityList.add(activity); 
 			}
@@ -53,6 +63,7 @@ public class ActivityDAO implements DAO<Activity> {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
 			preparedStatement.setString(1, activityToInsert.getName());
     		preparedStatement.setInt(2, activityToInsert.getTime());
+    		preparedStatement.setInt(3, activityToInsert.getRest());
 			preparedStatement.execute();
 			return true;
 	    } catch (SQLException e) {
@@ -74,7 +85,8 @@ public class ActivityDAO implements DAO<Activity> {
 			
 			String name = resultSet.getString("name");
 			int time = resultSet.getInt("time");
-			Activity activity = new Activity(name, time);
+			int rest = resultSet.getInt("rest");
+			Activity activity = new Activity(name, time, rest);
 			activity.setId(resultSet.getInt("id"));
 			
 			return activity;
@@ -101,12 +113,17 @@ public class ActivityDAO implements DAO<Activity> {
 	    		if (activityToUpdate.getTime() == 0 ) {  
 					activityToUpdate.setTime(activityRead.getTime());
 				}
+	    		
+	    		if (activityToUpdate.getRest() == 0 ) {  
+					activityToUpdate.setRest(activityRead.getRest());
+				}
 				
 				// Update the activity
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 				preparedStatement.setString(1, activityToUpdate.getName());
 				preparedStatement.setInt(2, activityToUpdate.getTime());
-				preparedStatement.setInt(3, activityToUpdate.getId());
+				preparedStatement.setInt(3, activityToUpdate.getRest());
+				preparedStatement.setInt(4, activityToUpdate.getId());
 				int a = preparedStatement.executeUpdate();
 				if (a > 0)
 					return true;

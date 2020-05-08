@@ -24,10 +24,12 @@
 	<tr>
 		<th>Name</th>
 		<th>Time</th>
+		<th>Rest</th>
 	</tr>
 	<tr>
 		<td><%=u.getName()%></td>
 		<td> <%=u.getTime()%></td>
+		<td> <%=u.getRest()%></td>
 	</tr>
 </table>
 

@@ -7,7 +7,9 @@ public class Activity {
 	
 	private String name;
 	
-	private int time;    //minuti
+	private int time;
+	
+	private int rest;
 	
 	/**
 	 *  Definiamo i costruttori
@@ -16,16 +18,18 @@ public class Activity {
 		
 	}
 	
-	public Activity (String name, int time) {  //costruttore senza id
+	public Activity (String name, int time, int rest) {  //costruttore senza id
 		this.name = name;
 		this.time = time;
+		this.rest = rest;
 		
 	}
 	
-	public Activity (int id, String name, int time) {  //costruttore con id
+	public Activity (int id, String name, int time, int rest) {  //costruttore con id
 		this.id = id;
 		this.name = name;
 		this.time = time;
+		this.rest = rest;
 	}
 	
 	/**
@@ -52,10 +56,16 @@ public class Activity {
 	public void setTime(int time) {
 		this.time = time;
 	}
+	public int getRest() {
+		return this.rest;
+	}
+	public void setRest(int rest) {
+		this.rest = rest;
+	}
 	
 	@Override   //trasforma l'oggetto in un stringa
 	public String toString() {
-		return id + "\t"  + name + "\t\t" + time + "\t\t";
+		return id + "\t"  + name + "\t\t" + time + "\t\t" + rest + "\t\t";
 	}
 	
 	@Override   //confrontare gli oggetti in una stringa
@@ -75,9 +85,14 @@ public class Activity {
 		} else if(!name.equals(other.name))
 			return false;
 		
-		if (time != other.time)    //chiedere!!
+		if (time != other.time) {  
 			return false;
+		}
+		 if (rest != other.rest) { 
+			return false;
+		 }
 		return true;
+		
 		
 		}
 	}

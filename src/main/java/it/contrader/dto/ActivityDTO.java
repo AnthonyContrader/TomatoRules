@@ -6,22 +6,26 @@ public class ActivityDTO {
 	
 	private String name;
 	
-	private int time;    
+	private int time;
+	
+	private int rest;
 	
 	public ActivityDTO() {   
 		
 	}
 	
-	public ActivityDTO (String name, int time) {  
+	public ActivityDTO (String name, int time, int rest) {  
 		this.name = name;
 		this.time = time;
+		this.rest = rest;
 		
 	}
 	
-	public ActivityDTO (int id, String name, int time) {  
+	public ActivityDTO (int id, String name, int time, int rest) {  
 		this.id = id;
 		this.name = name;
 		this.time = time;
+		this.rest = rest;
 		
 	}
 	
@@ -45,10 +49,15 @@ public class ActivityDTO {
 	public void setTime(int time) {
 		this.time = time;
 	}
-	
+	public int getRest() {
+		return rest;
+	}
+	public void setRest(int rest) {
+		this.rest = rest;
+	}	
 	@Override   //trasforma l'oggetto in un stringa
 	public String toString() {
-		return id + "\t"  + name + "\t\t" + time + "\t\t";
+		return id + "\t"  + name + "\t\t" + time + "\t\t" + rest + "\t\t";
 		
 	}
 }
