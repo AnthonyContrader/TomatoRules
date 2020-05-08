@@ -13,9 +13,12 @@
 <link href="css/vittoriostyle.css" rel="stylesheet">
 </head>
 <body>
+<%
+	request.setAttribute("activesection", "home");
+%>
 <%@include file="css/header.jsp"%>
-
-
+<%@ include file="../css/navbar.jsp" %>
+<!--
 <div class="navbar">
   <a class="active" href="homeadmin.jsp">Home</a>
   <a href="UserServlet?mode=userlist">Users</a>
@@ -26,6 +29,7 @@
   
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
+-->
 
 <div class="main">
 <h1>Welcome ${user.getUsername()}</h1>

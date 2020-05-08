@@ -8,7 +8,12 @@
 		<title>Tool Manager</title>
 	</head>
 	<body>
+		<%
+			request.setAttribute("activesection", "tools");
+		%>
 		<%@ include file="../css/header.jsp" %>
+		<%@ include file="../css/navbar.jsp" %>
+		<!-- 
 		<div class="navbar">
 			<a href="homeadmin.jsp">Home</a>
   			<a href="UserServlet?mode=userlist">Users</a>
@@ -17,6 +22,7 @@
   			<a class="active" href="ToolServlet?mode=toollist">Tools</a>
 			<a href="LogoutServlet" id="logout">Logout</a>
 		</div>
+		-->
 		<div class="main">
 			<%
 				List<ToolDTO> list = (List<ToolDTO>) request.getAttribute("list");

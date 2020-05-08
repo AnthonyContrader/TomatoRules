@@ -12,6 +12,9 @@
 <title>Category Manager</title>
 </head>
 <body>
+<%
+	request.setAttribute("activesection", "categories");
+%>
 <%@ include file="../css/header.jsp" %>
 <%@ include file="../css/navbar.jsp" %>
 
