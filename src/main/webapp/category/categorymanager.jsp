@@ -13,8 +13,9 @@
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
+<%@ include file="../css/navbar.jsp" %>
 
-<div class="navbar">
+<!-- <div class="navbar">
 	<a href="homeadmin.jsp">Home</a>
 	<a href="UserServlet?mode=userlist">Users</a>
 	<a href="ActivityServlet?mode=activitylist">Activities</a>
@@ -22,6 +23,7 @@
   	<a href="ToolServlet?mode=toollist">Tools</a>
 	<a href="LogoutServlet" id="logout">Logout</a>
 </div>
+-->
 <div class="main">
 	<% 
 		List<CategoryDTO> list = (List<CategoryDTO>) request.getAttribute("list");
