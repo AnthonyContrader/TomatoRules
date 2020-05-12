@@ -31,7 +31,7 @@
       <label for="activity">Name</label>
     </div>
     <div class="col-75">
-      <input type="text" id="activity" name="name" value=<%=a.getName()%>>
+      <input type="text" id="activity" name="name" value="<%=a.getName()%>">
     </div>
   </div>
   <div class="row">
@@ -40,7 +40,7 @@
     </div>
     <div class="col-75">
       <input
-			type="text" id="tim" name="time" value=<%=a.getTime()%>> 
+			type="text" id="tim" name="time" value="<%=a.getTime()%>"> 
     </div>
     	<input type="hidden" name="id" value =<%=a.getId() %>>
   </div>

@@ -30,7 +30,7 @@
       <label for="category">Name</label>
     </div>
     <div class="col-75">
-      <input type="text" id="category" name="name" value=<%=c.getName()%>>
+      <input type="text" id="category" name="name" value="<%=c.getName()%>">
     </div>
   </div>
   <div class="row">
@@ -39,7 +39,7 @@
     </div>
     <div class="col-75">
       <input
-			type="text" id="desc" name="description" value=<%=c.getDescription()%>> 
+			type="text" id="desc" name="description" value="<%=c.getDescription()%>"> 
     </div>
     	<input type="hidden" name="id" value=<%=c.getId() %>>
   </div>
