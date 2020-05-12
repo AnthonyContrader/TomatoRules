@@ -35,7 +35,7 @@
 				for (ActivityDTO a : list) {
 			%>
 			<tr>
-				<td><a href="/user/read?id=<%=a.getId()%>"> <%=a.getName()%>
+				<td><a href="/activity/read?id=<%=a.getId()%>"> <%=a.getName()%>
 				</a></td>
 				<td><%=a.getTime()%></td>
 				<td><a href="/activity/preupdate?id=<%=a.getId()%>">Edit</a></td>

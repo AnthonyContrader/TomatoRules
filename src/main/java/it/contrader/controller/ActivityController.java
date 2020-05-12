@@ -35,7 +35,7 @@ public class ActivityController {
 	@GetMapping("/preupdate")
 	public String preUpdate(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", service.read(id));
-		return "updateuser";
+		return "updateactivity";
 	}
 
 	@PostMapping("/update")
@@ -65,7 +65,7 @@ public class ActivityController {
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", service.read(id));
-		return "readuser";
+		return "readactivity";
 	}
 
 	@GetMapping("/logout")
