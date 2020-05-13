@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import it.contrader.model.Category;
+import it.contrader.model.Tool;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,6 +19,9 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 public class Activity {
+	
+	@ManyToOne
+	private Tool activitytool;
 	
 	@ManyToOne
 	private Category category;

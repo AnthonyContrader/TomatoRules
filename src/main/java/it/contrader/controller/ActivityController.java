@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import it.contrader.dto.ActivityDTO;
 import it.contrader.service.ActivityService;
 import it.contrader.model.Category;
+import it.contrader.model.Tool;
 import it.contrader.service.CategoryService;
+import it.contrader.service.ToolService;
 
 @Controller
 @RequestMapping("/activity")
@@ -23,6 +25,9 @@ public class ActivityController {
 	
 	@Autowired
 	private CategoryService serviceCategory;
+	
+	@Autowired
+	private ToolService serviceTool;
 	
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
@@ -44,13 +49,18 @@ public class ActivityController {
 	}
 
 	@PostMapping("/update")
-	public String update(HttpServletRequest request, @RequestParam("category") Category category, @RequestParam("id") Long id, @RequestParam("name") String name,
+	public String update(HttpServletRequest request, 
+			@RequestParam("activitytool") Tool activitytool, 
+			@RequestParam("category") Category category, 
+			@RequestParam("id") Long id, 
+			@RequestParam("name") String name,
 			@RequestParam("time") Long time) {
 
 		ActivityDTO dto = new ActivityDTO();
 		dto.setId(id);
 		dto.setName(name);
 		dto.setTime(time);
+		dto.setActivitytool(activitytool);
 		dto.setCategory(category);
 		service.update(dto);
 		setAll(request);
@@ -59,11 +69,15 @@ public class ActivityController {
 	}
 	
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("category") Category category, @RequestParam("name") String name,
+	public String insert(HttpServletRequest request, 
+			@RequestParam("activitytool") Tool activitytool,
+			@RequestParam("category") Category category,
+			@RequestParam("name") String name,
 			@RequestParam("time") Long time) {
 		ActivityDTO dto = new ActivityDTO();
 		dto.setName(name);
 		dto.setTime(time);
+		dto.setActivitytool(activitytool);
 		dto.setCategory(category);
 		service.insert(dto);
 		setAll(request);
@@ -79,6 +93,7 @@ public class ActivityController {
 	private void setAll(HttpServletRequest request) {
 		request.getSession().setAttribute("list", service.getAll());
 		request.getSession().setAttribute("listCategory", serviceCategory.getAll());
+		request.getSession().setAttribute("listTool", serviceTool.getAll());
 	}
 
 }

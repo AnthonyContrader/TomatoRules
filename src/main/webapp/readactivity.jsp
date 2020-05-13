@@ -14,14 +14,14 @@
 <%@ include file="./css/header.jsp"%>
 	<div class="navbar">
 		<a href="/homeadmin.jsp">Home</a>
-		 <a class="active" 	href="/activity/getall">activities</a>
+		 <a class="active" 	href="/activity/getall">Activities</a>
 		  <a href="/user/logout" id="logout">Logout</a>
 	</div>
 	<br>
 
 	<div class="main">
 		<%
-			ActivityDTO a = (ActivityDTO) request.getSession().getAttribute("dto");
+			ActivityDTO a = (ActivityDTO)   request.getSession().getAttribute("dto");
 		%>
 
 
@@ -30,12 +30,14 @@
 				<th>ID</th>
 				<th>Name</th>
 				<th>Time</th>
+				<th>Tool</th>
 				<th>Category</th>
 			</tr>
 			<tr>
 				<td><%=a.getId()%></td>
 				<td><%=a.getName()%></td>
 				<td><%=a.getTime()%></td>
+				<td><%=a.getActivitytool()%></td>
 				<td><%=a.getCategory()%></td>
 			</tr>
 		</table>

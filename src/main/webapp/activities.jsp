@@ -1,5 +1,5 @@
 <%@ page import="it.contrader.dto.ActivityDTO" import="java.util.*"
-		 import="it.contrader.dto.CategoryDTO"%>
+		 import="it.contrader.dto.CategoryDTO" import="it.contrader.dto.ToolDTO"%>
 <html>
 <head>
 <meta charset="utf-8">
@@ -20,8 +20,9 @@
 	
 	<div class="main">
 		<%
-			List<ActivityDTO> list = (List<ActivityDTO>) request.getSession().getAttribute("list");
-			List<CategoryDTO> list_C = (List<CategoryDTO>) request.getSession().getAttribute("listCategory");
+			List<ActivityDTO>   list    = (List<ActivityDTO>)   request.getSession().getAttribute("list");
+			List<CategoryDTO>   list_C  = (List<CategoryDTO>)   request.getSession().getAttribute("listCategory");
+			List<ToolDTO>       list_T  = (List<ToolDTO>)       request.getSession().getAttribute("listTool");
 		%>
 		
 		<br>
@@ -30,7 +31,9 @@
 		<tr>
 			<th>Name</th>
 			<th>Time</th>
+			<th>Tool</th>
 			<th>Category</th>
+			<th>Cat.Tool</th>
 			<th></th>
 			<th></th> 
 		</tr>
@@ -41,10 +44,10 @@
 				<td><a href="/activity/read?id=<%=a.getId()%>"> <%=a.getName()%>
 				</a></td>
 				<td><%=a.getTime()%></td>
-				<td><%=a.getCategory() %></td>
+				<td><%=a.getActivitytool().getName() %></td>
+				<td><%=a.getCategory().getName() %></td>
+				<td><%=a.getCategory().getTool().getName() %></td>
 				<td><a href="/activity/preupdate?id=<%=a.getId()%>">Edit</a></td>
-
-
 				<td><a href="/activity/delete?id=<%=a.getId()%>">Delete</a></td>
 
 			</tr>
@@ -71,6 +74,34 @@
 				<div class="col-75">
 					<input type="text" id="tim" name="time"
 						placeholder="inserisci tempo">
+				</div>
+			</div>
+<!--
+			<div class="row">
+				<div class="col-25">
+					<label for="actool">Tool</label>
+				</div>
+				<div class="col-75">
+					<input type="text" id="actool" name="activitytool"
+						placeholder="inserisci lo strumento">
+				</div>
+			</div>
+-->
+			<div class="row">
+    			<div class="col-25">
+	      			<label for="type">Select Tool</label>
+    			</div>
+   			 	<div class="col-75">
+ 					<select id="actool" name="activitytool" required>
+ 						<option value="" disabled selected>Select Tool</option>
+ 						<% 			
+							for (ToolDTO t : list_T) {
+						%>
+								<option value="<%=t.getId()%>"><%=t.getName()%></option>
+						<%
+							}
+						%> 
+					</select>
 				</div>
 			</div>
 			<div class="row">

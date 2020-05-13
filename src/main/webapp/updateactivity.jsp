@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" 
 	pageEncoding="ISO-8859-1" import="java.util.*" import="it.contrader.dto.ActivityDTO"
-	import="it.contrader.dto.CategoryDTO"%>
+	import="it.contrader.dto.CategoryDTO" import="it.contrader.dto.ToolDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,8 +22,10 @@
 <br>
 <div class="main">
 
-<%ActivityDTO a = (ActivityDTO) request.getSession().getAttribute("dto");
-List<CategoryDTO> list_C = (List<CategoryDTO>) request.getSession().getAttribute("listCategory");
+<%
+	ActivityDTO         a       = (ActivityDTO)         request.getSession().getAttribute("dto");
+	List<CategoryDTO>   list_C  = (List<CategoryDTO>)   request.getSession().getAttribute("listCategory");
+	List<ToolDTO>       list_T  = (List<ToolDTO>)       request.getSession().getAttribute("listTool");
 %>
 
 
@@ -45,6 +47,22 @@ List<CategoryDTO> list_C = (List<CategoryDTO>) request.getSession().getAttribute
 			type="text" id="tim" name="time" value="<%=a.getTime()%>"> 
     </div>
     	<input type="hidden" name="id" value =<%=a.getId() %>>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="actool">Tool</label>
+    </div>
+   		 <div class="col-75">
+ 			<select id="actool" name="activitytool">
+ 				<%
+					for (ToolDTO t : list_T) {
+				%>
+					<option value="<%=t.getId()%>"<%if(t.getId()==a.getActivitytool().getId()) {%> selected<%} %>><%=t.getName()%></option>
+				<%
+					}
+				%>
+			</select>
+    	</div>
   </div>
   <div class="row">
     <div class="col-25">

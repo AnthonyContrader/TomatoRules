@@ -22,10 +22,12 @@
 			%>
 			<table>
 				<tr>
+					<th>ID</th>
 					<th>Name</th>
 					<th>Description</th>
 				</tr>
 				<tr>
+					<td><%=t.getId()%></td>
 					<td><%=t.getName()%></td>
 					<td><%=t.getDescription()%></td>
 				</tr>
