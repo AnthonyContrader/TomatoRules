@@ -30,11 +30,13 @@
 				<th>ID</th>
 				<th>Name</th>
 				<th>Time</th>
+				<th>Category</th>
 			</tr>
 			<tr>
 				<td><%=a.getId()%></td>
 				<td><%=a.getName()%></td>
 				<td><%=a.getTime()%></td>
+				<td><%=a.getCategory()%></td>
 			</tr>
 		</table>
 

@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import it.contrader.dto.ActivityDTO;
 import it.contrader.service.ActivityService;
+import it.contrader.model.Category;
+import it.contrader.service.CategoryService;
 
 @Controller
 @RequestMapping("/activity")
@@ -18,6 +20,9 @@ public class ActivityController {
 	
 	@Autowired
 	private ActivityService service;
+	
+	@Autowired
+	private CategoryService serviceCategory;
 	
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
@@ -39,24 +44,27 @@ public class ActivityController {
 	}
 
 	@PostMapping("/update")
-	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("name") String name,
+	public String update(HttpServletRequest request, @RequestParam("category") Category category, @RequestParam("id") Long id, @RequestParam("name") String name,
 			@RequestParam("time") Long time) {
 
 		ActivityDTO dto = new ActivityDTO();
 		dto.setId(id);
 		dto.setName(name);
 		dto.setTime(time);
+		dto.setCategory(category);
 		service.update(dto);
 		setAll(request);
 		return "activities";
+		
 	}
 	
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("name") String name,
+	public String insert(HttpServletRequest request, @RequestParam("category") Category category, @RequestParam("name") String name,
 			@RequestParam("time") Long time) {
 		ActivityDTO dto = new ActivityDTO();
 		dto.setName(name);
 		dto.setTime(time);
+		dto.setCategory(category);
 		service.insert(dto);
 		setAll(request);
 		return "activities";
@@ -68,14 +76,9 @@ public class ActivityController {
 		return "readactivity";
 	}
 
-	@GetMapping("/logout")
-	public String logout(HttpServletRequest request) {
-		request.getSession().invalidate();
-		return "index";
-	}
-
 	private void setAll(HttpServletRequest request) {
 		request.getSession().setAttribute("list", service.getAll());
+		request.getSession().setAttribute("listCategory", serviceCategory.getAll());
 	}
 
 }
