@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import it.contrader.dto.CategoryDTO;
 import it.contrader.service.CategoryService;
+import it.contrader.model.Tool;
+import it.contrader.service.ToolService;
 
 @Controller
 @RequestMapping("/category")
@@ -18,6 +20,9 @@ public class CategoryController {
 	
 	@Autowired
 	private CategoryService service;
+	
+	@Autowired
+	private ToolService serviceTool;
 	
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
@@ -39,13 +44,14 @@ public class CategoryController {
 	}
 
 	@PostMapping("/update")
-	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("name") String name,
+	public String update(HttpServletRequest request, @RequestParam("tool") Tool tool, @RequestParam("id") Long id, @RequestParam("name") String name,
 			@RequestParam("description") String description ) {
 
 		CategoryDTO dto = new CategoryDTO();
 		dto.setId(id);
 		dto.setName(name);
 		dto.setDescription(description);
+		dto.setTool(tool);
 		service.update(dto);
 		setAll(request);
 		return "categories";
@@ -53,11 +59,12 @@ public class CategoryController {
 	}
 
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("name") String name,
+	public String insert(HttpServletRequest request, @RequestParam("tool") Tool tool, @RequestParam("name") String name,
 			@RequestParam("description") String description) {
 		CategoryDTO dto = new CategoryDTO();
 		dto.setName(name);
 		dto.setDescription(description);
+		dto.setTool(tool);
 		service.insert(dto);
 		setAll(request);
 		return "categories";
@@ -71,6 +78,7 @@ public class CategoryController {
 	
 	private void setAll(HttpServletRequest request) {
 		request.getSession().setAttribute("list", service.getAll());
+		request.getSession().setAttribute("listTool", serviceTool.getAll());
 	}
 	
 }

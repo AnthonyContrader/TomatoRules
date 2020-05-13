@@ -11,12 +11,15 @@
 
 </head>
 <body>
-	<%@ include file="./css/header.jsp"%>
+<% 
+	request.setAttribute("activesection", "users");
 
-	<div class="navbar">
-		<a href="/homeadmin.jsp">Home</a> <a class="active"
-			href="/user/getall">Users</a> <a href="/user/logout" id="logout">Logout</a>
-	</div>
+%>
+
+
+	<%@ include file="./css/header.jsp"%>
+	<%@ include file="./css/navbar.jsp" %>
+	
 	<div class="main">
 		<%
 			List<UserDTO> list = (List<UserDTO>) request.getSession().getAttribute("list");

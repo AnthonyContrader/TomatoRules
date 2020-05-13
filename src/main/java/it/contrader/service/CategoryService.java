@@ -8,6 +8,7 @@ import it.contrader.converter.CategoryConverter;
 import it.contrader.dao.CategoryRepository;
 import it.contrader.dto.CategoryDTO;
 import it.contrader.model.Category;
+import it.contrader.model.Tool;
 
 @Service
 public class CategoryService extends AbstractService<Category, CategoryDTO> {
@@ -17,8 +18,8 @@ public class CategoryService extends AbstractService<Category, CategoryDTO> {
 	@Autowired
 	private CategoryRepository repository;
 	
-	public CategoryDTO findByNameAndDescriptio(String name, String description) {
-		return converter.toDTO(repository.findByNameAndDescription(name, description));
+	public CategoryDTO findByToolAndNameAndDescription(Tool tool, String name, String description) {
+		return converter.toDTO(repository.findByToolAndNameAndDescription(tool, name, description));
 	}
 
 }

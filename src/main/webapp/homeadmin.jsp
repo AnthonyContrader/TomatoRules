@@ -17,10 +17,16 @@
 </head>
 
 <body>
+<% 
+	request.setAttribute("activesection", "home");
+
+%>
+
 	<%@include file="css/header.jsp"%>
+	<%@include file="css/navbar.jsp"%>
 
 
-	<div class="navbar">
+	<!--<div class="navbar">
 		<a class="active" href="/homeadmin.jsp">Home</a> 
 		<a href=/user/getall>Users</a>		 
 		<a href=/activity/getall>Activities</a>
@@ -28,7 +34,7 @@
 		<a href=/tool/getall>Tools</a>
 		<a href="/user/logout" id="logout">Logout</a>
 	</div>
-
+ 	-->
 	<div class="main">
 		<h1>Welcome ${user.getUsername()}</h1>
 

@@ -8,13 +8,14 @@
 		<title>Tool Manager</title>
 	</head>
 	<body>
+	<% 
+	
+	request.setAttribute("activesection", "tools");
+
+	%>
 		<%@ include file="./css/header.jsp"%>
-		<div class="navbar">
-			<a href="/homeadmin.jsp">Home</a>
-			<a href="/user/getall">Users</a>
-			<a class="active" href="/tool/getall">Tools</a>
-			<a href="/user/logout" id="logout">Logout</a>
-		</div>
+		<%@ include file="./css/navbar.jsp"%>
+		
 		<div class="main">
 			<%
 				List<ToolDTO> list = (List<ToolDTO>) request.getSession().getAttribute("list");

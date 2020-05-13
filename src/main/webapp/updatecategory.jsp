@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="it.contrader.dto.CategoryDTO"%>
+    pageEncoding="ISO-8859-1" import="java.util.*" import="it.contrader.dto.CategoryDTO"
+    import="it.contrader.dto.ToolDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +22,9 @@
 <br>
 <div class="main">
 
-<%CategoryDTO c = (CategoryDTO) request.getSession().getAttribute("dto");%>
+<%CategoryDTO c = (CategoryDTO) request.getSession().getAttribute("dto");
+List<ToolDTO> list_T = (List<ToolDTO>) request.getSession().getAttribute("listTool");
+%>
 
 
 <form id="floatleft" action="/category/update" method="post">
@@ -43,7 +46,22 @@
     </div>
     	<input type="hidden" name="id" value=<%=c.getId() %>>
   </div>
-  
+  <div class="row">
+    <div class="col-25">
+      <label for="tool">Tool</label>
+    </div>
+   		 <div class="col-75">
+ 			<select id="tool" name="tool">
+ 				<%
+					for (ToolDTO t : list_T) {
+				%>
+					<option value="<%=t.getId()%>"  <%if(t.getId()==c.getTool().getId()) {%>selected<%} %>  ><%=t.getName()%></option>
+				<%
+					}
+				%>
+			</select>
+    	</div>
+  </div>
       <button type="submit" >Edit</button>
 </form>
 

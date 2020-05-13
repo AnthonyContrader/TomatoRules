@@ -1,5 +1,5 @@
 <%@ page import="it.contrader.dto.CategoryDTO" import="java.util.*"
-		 %>
+		 import="it.contrader.dto.ToolDTO"%>
 <html>
 <head>
 <meta charset="utf-8">
@@ -11,15 +11,17 @@
 <title>Category Manager</title>
 </head>
 <body>
+<% 
+	request.setAttribute("activesection", "categories");
+
+%>
 	<%@ include file="./css/header.jsp"%>
+	<%@ include file="./css/navbar.jsp" %>
 	
-	<div class="navbar">
-		<a href="/homeadmin.jsp">Home</a> <a class="active"
-			href="/category/getall">Categories</a> <a href="/user/logout" id="logout">Logout</a>
-	</div>
 	<div class="main">
 		<% 
 		List<CategoryDTO> list = (List<CategoryDTO>) request.getSession().getAttribute("list");
+		List<ToolDTO> list_T = (List<ToolDTO>) request.getSession().getAttribute("listTool");
 		%>
 		
 		<br>
@@ -28,6 +30,7 @@
 			<tr>
 				<th>Name</th>
 				<th>Description</th>
+				<th>Tool</th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -38,6 +41,7 @@
 				<td><a href="/category/read?id=<%=c.getId()%>"> <%=c.getName()%>
 				</a></td>
 				<td><%=c.getDescription()%></td>
+				<td><%=c.getTool() %></td>
 				<td><a href="/category/preupdate?id=<%=c.getId()%>">Edit</a></td>
 
 
@@ -69,11 +73,21 @@
 						placeholder="inserisci descrizione">
 				</div>
 			</div>
-					</select>
-				</div>
-			</div>
-			
-			
+			<div class="row">
+    		<div class="col-25">
+      			<label for="type">Select Tool</label>
+    		</div>
+   		 	<div class="col-75">
+ 				<select id="tool" name="tool" required>
+ 					<option value="" disabled selected>Select Tools</option>
+ 					<% 			
+						for (ToolDTO t : list_T) {
+							%> <option value="<%=t.getId()%>"><%=t.getName()%></option> <%
+						}%> 
+				</select>
+    		</div>
+  			</div>		
+				
 			<button type="submit">Insert</button>
 		</form>
 	
