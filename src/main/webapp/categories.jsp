@@ -41,10 +41,8 @@
 				<td><a href="/category/read?id=<%=c.getId()%>"> <%=c.getName()%>
 				</a></td>
 				<td><%=c.getDescription()%></td>
-				<td><%=c.getTool() %></td>
+				<td><%=c.getTool().getName() %></td>
 				<td><a href="/category/preupdate?id=<%=c.getId()%>">Edit</a></td>
-
-
 				<td><a href="/category/delete?id=<%=c.getId()%>">Delete</a></td>
 
 			</tr>
