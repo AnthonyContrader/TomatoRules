@@ -33,13 +33,15 @@
 				<th>Time</th>
 				<th>Tool</th>
 				<th>Category</th>
+				<th>Cat.Tool</th>
 			</tr>
 			<tr>
 				<td><%=a.getId()%></td>
 				<td><%=a.getName()%></td>
 				<td><%=a.getTime()%></td>
-				<td><%=a.getActivitytool()%></td>
-				<td><%=a.getCategory()%></td>
+				<td><%=a.getActivitytool().getName()%></td>
+				<td><%=a.getCategory().getName()%></td>
+				<td><%=a.getCategory().getTool().getName() %></td>
 			</tr>
 		</table>
 
