@@ -37,7 +37,7 @@ div.text{
 	position: relative;
 	padding: 3px;
 	clear:both;
-	margin-top: 5%;
+	margin-top: 25%;
 	margin-bottom: 1%;
 }
 
@@ -206,9 +206,10 @@ res {
 
 form {
 	width: 35%;
-	border-radius: 7px;
+	border: 1px solid #ccc;
+	border-radius: 15px 50px;
 	background-color: #f2f2f2;
-	padding: 20px;
+	padding: 30px;
 }
 
 .col-25 {
@@ -323,5 +324,4 @@ div.navbar a.active {
 	opacity: .9;
 	z-index: -1; opacity : .9;
 	width: 8%;
-}
 }
