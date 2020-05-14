@@ -34,8 +34,10 @@
 				<tr>
 					<td><a href="/tool/read?id=<%=t.getId()%>"> <%=t.getName()%> </a></td>
 					<td><%=t.getDescription()%></td>
-					<td><a href="/tool/preupdate?id=<%=t.getId()%>">Edit</a></td>
-					<td><a href="/tool/delete?id=<%=t.getId()%>">Delete</a></td>
+					<td><a href="/tool/preupdate?id=<%=t.getId()%>">
+						<img src="/css/fettine.gif" width=40 height=40 alt="Edit" title="Edit"></a></td>
+					<td><a href="/tool/delete?id=<%=t.getId()%>">
+						<img src="/css/cesto.gif" width=40 height=40 alt="Delete" title="Delete"></a></td>
 				</tr>
 				<%
 					}

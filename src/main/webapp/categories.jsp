@@ -42,8 +42,10 @@
 				</a></td>
 				<td><%=c.getDescription()%></td>
 				<td><%=c.getTool().getName() %></td>
-				<td><a href="/category/preupdate?id=<%=c.getId()%>">Edit</a></td>
-				<td><a href="/category/delete?id=<%=c.getId()%>">Delete</a></td>
+				<td><a href="/category/preupdate?id=<%=c.getId()%>">
+						<img src="/css/fettine.gif" width=40 height=40 alt="Edit" title="Edit"></a></td>
+				<td><a href="/category/delete?id=<%=c.getId()%>">
+						<img src="/css/cesto.gif" width=40 height=40 alt="Delete" title="Delete"></a></td>
 
 			</tr>
 			<%

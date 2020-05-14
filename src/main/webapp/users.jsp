@@ -43,10 +43,12 @@
 				</a></td>
 				<td><%=u.getPassword()%></td>
 				<td><%=u.getUsertype()%></td>
-				<td><a href="/user/preupdate?id=<%=u.getId()%>">Edit</a></td>
+				<td><a href="/user/preupdate?id=<%=u.getId()%>">
+						<img src="/css/fettine.gif" width=40 height=40 alt="Edit" title="Edit"></a></td>
 
 
-				<td><a href="/user/delete?id=<%=u.getId()%>">Delete</a></td>
+				<td><a href="/user/delete?id=<%=u.getId()%>">
+						<img src="/css/cesto.gif" width=40 height=40 alt="Delete" title="Delete"></a></td>
 
 			</tr>
 			<%

@@ -47,8 +47,10 @@
 				<td><%=a.getActivitytool().getName() %></td>
 				<td><%=a.getCategory().getName() %></td>
 				<td><%=a.getCategory().getTool().getName() %></td>
-				<td><a href="/activity/preupdate?id=<%=a.getId()%>">Edit</a></td>
-				<td><a href="/activity/delete?id=<%=a.getId()%>">Delete</a></td>
+				<td><a href="/activity/preupdate?id=<%=a.getId()%>">
+						<img src="/css/fettine.gif" width=40 height=40 alt="Edit" title="Edit"></a></td>
+				<td><a href="/activity/delete?id=<%=a.getId()%>">
+						<img src="/css/cesto.gif" width=40 height=40 alt="Delete" title="Delete"></a></td>
 
 			</tr>
 			<%
