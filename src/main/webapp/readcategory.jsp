@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"	import="it.contrader.dto.CategoryDTO"
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"	import="it.contrader.dto.CategoryDTO"
     	 	%>
 <html>
 <head>

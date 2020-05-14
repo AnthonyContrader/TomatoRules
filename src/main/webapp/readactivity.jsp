@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" 
-	pageEncoding="ISO-8859-1" import="it.contrader.dto.ActivityDTO"%>
+<%@ page 
+	import="it.contrader.dto.ActivityDTO"%>
 <html>
 <head>
 <meta charset="utf-8">
@@ -10,6 +10,7 @@
 <link href="/css/vittoriostyle.css" rel="stylesheet">
 <title>Read Activity</title>
 </head>
+<meta charset="utf-8">
 <body>
 <%@ include file="./css/header.jsp"%>
 	<div class="navbar">
