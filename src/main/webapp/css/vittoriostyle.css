@@ -123,10 +123,13 @@ table {
 	border-collapse: collapse;
 	width: 50%;
 	float:left;
+	/*
+	border-style: hidden;
+	*/
 	background-color: #FF6347;
-	border-radius:25px 25px 0px 0px;
 	border-color: #FF6347;
 	border-width: 0px;
+	border-radius:25px 25px 20px 20px;
    /* -moz-border-radius:25px; 
    */
     /*box-shadow: 0 0 0 1px #666;
@@ -137,22 +140,29 @@ th, td {
 	text-align: center;
 	padding: 8px;
 }
-tr:nth-child(even) {
-	background-color: #f2f2f2;
-}
- /*tr:nth-child(odd) {
-	background-color: #ffffff;
+/*
+thead {
+	background-color: transparent;
+	border-radius:25px;
 }
 */
-/*tr:tablecolumns {
+tr {
+	background-color: transparent;
+}
+tbody > tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+tbody > tr:nth-child(odd) {
+	background-color: #ffffff;
+}
+/*
+tr:tablecolumns {
 	border-color: #FF6347;
 	
 }
 */
 th {
-	background-color: transparent;
 	color: #ffffff;
-	border-radius:25px;
 }
 a:hover {
 	color: #999999;

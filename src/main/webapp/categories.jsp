@@ -28,13 +28,16 @@
 		
 		<table>
 		
-			<tr>
+			<thead>
+		 	<tr>
 				<th>Name</th>
 				<th>Description</th>
 				<th>Tool</th>
 				<th></th>
 				<th></th>
 			</tr>
+			</thead>
+			<tbody>
 			<%
 				for (CategoryDTO c : list) {
 			%>
@@ -52,6 +55,16 @@
 			<%
 				}
 			%>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tfoot>
 		</table>
 		
 		
