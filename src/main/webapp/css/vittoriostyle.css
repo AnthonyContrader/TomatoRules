@@ -140,8 +140,13 @@ th, td {
 tr:nth-child(even) {
 	background-color: #f2f2f2;
 }
-/* tr:nth-child(odd) {
+ /*tr:nth-child(odd) {
 	background-color: #ffffff;
+}
+*/
+/*tr:tablecolumns {
+	border-color: #FF6347;
+	
 }
 */
 th {
@@ -180,9 +185,6 @@ width: 100%;
   cursor: pointer;
 	
 }
-
-
-
 
 input {
   width: 80%;
