@@ -28,6 +28,8 @@
 		<br>
 
 		<table>
+		
+			<thead>
 			<tr>
 				<th>Username</th>
 				<th>Password</th>
@@ -35,6 +37,8 @@
 				<th></th>
 				<th></th>
 			</tr>
+			</thead>
+			<tbody>
 			<%
 				for (UserDTO u : list) {
 			%>
@@ -54,8 +58,18 @@
 			<%
 				}
 			%>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tfoot>
 		</table>
-
+		
 
 
 		<form id="floatright" action="/user/insert" method="post">

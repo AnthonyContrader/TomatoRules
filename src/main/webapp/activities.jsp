@@ -28,6 +28,9 @@
 		<br>
 
 	<table>
+	
+	
+		<thead>
 		<tr>
 			<th>Name</th>
 			<th>Time</th>
@@ -37,6 +40,8 @@
 			<th></th>
 			<th></th> 
 		</tr>
+		</thead>
+		<tbody>
 		<%
 				for (ActivityDTO a : list) {
 			%>
@@ -56,6 +61,18 @@
 			<%
 				}
 			%>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tfoot>
 		</table>
 
 

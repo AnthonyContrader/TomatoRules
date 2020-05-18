@@ -22,12 +22,16 @@
 			%>
 		<br>
 			<table>
+			
+				<thead>
 				<tr>
 					<th>Name</th>
 					<th>Description</th>
 					<th></th>
 					<th></th>
 				</tr>
+				</thead>
+				<tbody>
 				<%
 					for (ToolDTO t : list) {
 				%>
@@ -42,7 +46,18 @@
 				<%
 					}
 				%>
-			</table>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tfoot>
+		</table>
+		
+		
 			<form id="floatright" action="/tool/insert" method="post">
 				<div class="row">
 					<div class="col-25">
