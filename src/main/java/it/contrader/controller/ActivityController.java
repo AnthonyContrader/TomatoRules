@@ -9,13 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import it.contrader.dto.ActivityDTO;
-import it.contrader.dto.LoginDTO;
-import it.contrader.dto.UserDTO;
 import it.contrader.service.ActivityService;
-import it.contrader.service.UserService;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/activity")
 @CrossOrigin(origins = "http://localhost:4200")
 public class ActivityController extends AbstractController<ActivityDTO>{
 	
