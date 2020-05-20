@@ -1,4 +1,3 @@
-import {Usertype} from './usertype';
 
 export class ActivityDTO {
 
