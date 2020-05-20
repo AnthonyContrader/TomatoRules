@@ -5,6 +5,8 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UsersComponent } from './users/users.component';
 import { ActivitiesComponent } from './activities/activities.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { ToolsComponent } from './tools/tools.component';
 import { WorkInProgressComponent } from './work-in-progress/work-in-progress.component';
 
 /**
@@ -16,7 +18,7 @@ import { WorkInProgressComponent } from './work-in-progress/work-in-progress.com
  * @see AdminRoutingModule
  */
 @NgModule({
-  declarations: [AdminDashboardComponent, UsersComponent, ActivitiesComponent, WorkInProgressComponent],
+  declarations: [AdminDashboardComponent, UsersComponent, ActivitiesComponent, CategoriesComponent, ToolsComponent, WorkInProgressComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
