@@ -9,4 +9,7 @@ import it.contrader.model.Activity;
 @Service
 public class ActivityService extends AbstractService<Activity,ActivityDTO> {
 	
+	public ActivityDTO findByNameAndTime(String name, Long time) {
+		return converter.toDTO(((ActivityRepository)repository).findByNameAndTime(name, time));
+	}
 }

@@ -7,8 +7,11 @@ import org.springframework.stereotype.Repository;
 
 import it.contrader.model.Activity;
 
+
 @Repository
 @Transactional
 public interface ActivityRepository extends CrudRepository<Activity, Long> {
+	
+	Activity findByNameAndTime(String name, Long time);
 
 }
