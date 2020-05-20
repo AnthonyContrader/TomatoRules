@@ -25,8 +25,8 @@ const routes: Routes = [
     { path: '', component: AdminDashboardComponent},
     { path: 'users', component: UsersComponent},
     { path: 'activities', component: ActivitiesComponent}, 
-    { path: 'categories' component: CategoriesComponent},
-    { path: 'tools' component: ToolsComponent},
+    { path: 'categories', component: CategoriesComponent},
+    { path: 'tools', component: ToolsComponent},
     { path: 'work-in-progress', component: WorkInProgressComponent}
   ]}
 ];
