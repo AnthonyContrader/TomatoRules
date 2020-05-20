@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-10">
+      <table>
+        <tr>
+          <th>
+            Name
+          </th>
+          <th>
+            Time
+          </th>
+          <th>
+            Edit
+          </th>
+          <th>
+            Activity
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <input placeholder="name" [(ngModel)]="activitytoinsert.name">
+          </td>
+          <td>
+            <input placeholder="time" [(ngModel)]="activitytoinser.time">
+          </td>
+          <td>
+            <button (click)="insert(activitytoinsert)">Insert</button>
+          </td>
+          <td>
+            <button (click)="clear()">Clear</button>
+          </td>
+        </tr>
+        <tr *ngFor="let activity of activities">
+          <td>
+            <input [(ngModel)]="activity.name">
+          </td>
+          <td>
+            <input [(ngModel)]="activity.time">
+          </td>
+          <td>
+            <button (click)="update(activity)">Save</button>
+          </td>
+          <td>
+            <button (click)="delete(activity)">delete</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-1">
+
+    </div>
+  </div>  
+</div>
+
+
