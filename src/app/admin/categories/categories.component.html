@@ -4,7 +4,7 @@
 
     </div>
     <div class="col-md-10">
-      <table>
+     <table>
         <tr>
           <th>
             Name
@@ -41,7 +41,7 @@
             <input [(ngModel)]="category.description">
           </td>
           <td>
-            <button (click)=update(category)>Save</button>
+            <button type="button" class="btn btn-danger" (click)=update(category)>Save</button>
           </td>
           <td>
             <button (click)="delete(category)">Delete</button>

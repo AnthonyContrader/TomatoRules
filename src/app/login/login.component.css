@@ -14,7 +14,7 @@ img{
 
 input, input:hover, input::selection, input:checked, input:focus{
     border: 0;
-    background-color: darkorange;
+    background-color: rgb(165, 37, 62);
     border-radius: 0;
     color: white;
     border-bottom: 1px solid crimson;
@@ -22,7 +22,7 @@ input, input:hover, input::selection, input:checked, input:focus{
 }
 
 .container-fluid{
-    background-color: darkorange;
+    background-color: white;
     height: 100vh;
 }
 input::placeholder{
@@ -30,7 +30,7 @@ input::placeholder{
 }
 .form-control{
 border: none;
-background-color: darkorange;
+background-color: rgb(13, 133, 19);
 color: white;
 border-bottom: 1px solid white;
 }
