@@ -11,11 +11,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 public class CategoryDTO {
-
-	private long id;
+	
+	private Long id;
 	
 	private String name;
 	
 	private String description;
 	
 }
+
