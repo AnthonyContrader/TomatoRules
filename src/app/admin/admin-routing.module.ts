@@ -5,7 +5,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { UsersComponent } from './users/users.component';
 import { ActivitiesComponent } from './activities/activities.component';
 import { CategoriesComponent } from './categories/categories.component';
-//import { ToolsComponent } from './tools/tools.component';
+import { ToolsComponent } from './tools/tools.component';
 import { WorkInProgressComponent } from './work-in-progress/work-in-progress.component';
 
 /**
@@ -26,7 +26,7 @@ const routes: Routes = [
     { path: 'users', component: UsersComponent},
     { path: 'activities', component: ActivitiesComponent}, 
     { path: 'categories', component: CategoriesComponent},
-   // { path: 'tools', component: ToolsComponent},
+    { path: 'tools', component: ToolsComponent},
     { path: 'work-in-progress', component: WorkInProgressComponent}
   ]}
 ];

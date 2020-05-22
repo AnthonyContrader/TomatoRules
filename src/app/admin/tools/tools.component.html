@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-10">
+      <table>
+        <tr>
+          <th>
+            Name
+          </th>
+          <th>
+            Description
+          </th>
+          <th>
+            Edit
+          </th>
+          <th>
+            Tool
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <input placeholder="name" [(ngModel)]="tooltoinsert.name">
+          </td>
+          <td>
+            <input placeholder="description" [(ngModel)]="tooltoinsert.description">
+          </td>
+          <td>
+            <button (click)="insert(tooltoinsert)">Insert</button>
+          </td>
+          <td>
+            <button (click)="clear()">Clear</button>
+          </td>
+        </tr>
+        <tr *ngFor="let tool of tools">
+          <td>
+            <input [(ngModel)]="tool.name">
+          </td>
+          <td>
+            <input [(ngModel)]="tool.description">
+          </td>
+          <td>
+            <button (click)=update(tool)>Save</button>
+          </td>
+          <td>
+            <button (click)="delete(tool)">Delete</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-1">
+
+    </div>
+  </div>
+</div>

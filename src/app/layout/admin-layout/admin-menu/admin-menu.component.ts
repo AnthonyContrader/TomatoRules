@@ -11,6 +11,7 @@ export class AdminMenuComponent implements OnInit {
   isUserCollapsed = false;
   isActivityCollapsed = false;
   isCategoryCollapsed = false;
+  isToolCollapsed = false;
   isClientCollapsed = false;
   isAccountCollapsed = false;
 
@@ -37,13 +38,17 @@ export class AdminMenuComponent implements OnInit {
     } else { this.isActivityCollapsed = false; }
   }
 
-
   categoriescollapse() {
     if (this.isCategoryCollapsed === false) {
       this.isCategoryCollapsed = true;
     } else { this.isCategoryCollapsed = false; }
   }
 
+  toolscollapse() {
+    if (this.isToolCollapsed === false) {
+      this.isToolCollapsed = true;
+    } else { this.isToolCollapsed = false; }
+  }
 
   accountcollapse() {
     if (this.isAccountCollapsed === false) {

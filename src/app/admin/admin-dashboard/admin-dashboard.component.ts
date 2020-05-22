@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserDTO } from 'src/dto/userdto';
 import { ActivityDTO } from 'src/dto/activitydto';
 import { CategoryDTO } from 'src/dto/categorydto';
-
+import { ToolDTO } from 'src/dto/tooldto';
 
 /**
  * Componente della dashboard admin. Nell'ngOnInit recupera
@@ -18,6 +18,7 @@ export class AdminDashboardComponent implements OnInit {
   user: UserDTO;
   activity: ActivityDTO;
   category: CategoryDTO;
+  tool: ToolDTO;
 
   constructor() { }
 
@@ -25,6 +26,7 @@ export class AdminDashboardComponent implements OnInit {
     this.user = JSON.parse(localStorage.getItem('currentUser'));
     this.activity = JSON.parse(localStorage.getItem('currentActivity'));
     this.category = JSON.parse(localStorage.getItem('currentCategory'));
+    this.tool = JSON.parse(localStorage.getItem('currentTool'));
   }
 
 }
