@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import it.contrader.dto.CategoryDTO;
 import it.contrader.service.CategoryService;
+import it.contrader.model.Tool;
+import it.contrader.service.ToolService;
 
 @RestController
 @RequestMapping("/category")
