@@ -27,7 +27,7 @@
             <input placeholder="description" [(ngModel)]="tooltoinsert.description">
           </td>
           <td>
-            <button (click)="insert(tooltoinsert)">Insert</button>
+            <button (click)="insert(tooltoinsert);clear()">Insert</button>
           </td>
           <td>
             <button (click)="clear()">Clear</button>

@@ -13,6 +13,9 @@
             Time
           </th>
           <th>
+            Tool
+          </th>
+          <th>
             Edit
           </th>
           <th>
@@ -27,7 +30,15 @@
             <input placeholder="time" [(ngModel)]="activitytoinsert.time">
           </td>
           <td>
+            <select [(ngModel)]="activitytoinsert.tool" >
+              <option *ngFor="let tool of tools" [ngValue]="tool">{{tool.name}}</option>
+            </select>
+          </td>
+          <td>
+            <button (click)="insert(activitytoinsert);clear()">Insert</button>
+            <!--
             <button (click)="insert(activitytoinsert)">Insert</button>
+            -->
           </td>
           <td>
             <button (click)="clear()">Clear</button>
@@ -39,6 +50,14 @@
           </td>
           <td>
             <input [(ngModel)]="activity.time">
+          </td>
+          <td>
+            <select [(ngModel)]="activity.tool.id">
+              <option *ngFor="let tool of tools" [ngValue]="tool.id">{{tool.name}}</option>
+            </select>
+            <!--
+            <input [(ngModel)]="activity.tool.name">
+            -->
           </td>
           <td>
             <button (click)="update(activity)">Save</button>
