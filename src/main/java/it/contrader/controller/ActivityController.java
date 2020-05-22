@@ -7,9 +7,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import it.contrader.dto.ActivityDTO;
 import it.contrader.service.ActivityService;
+import it.contrader.model.Tool;
+import it.contrader.service.ToolService;
 
 @RestController
 @RequestMapping("/activity")
