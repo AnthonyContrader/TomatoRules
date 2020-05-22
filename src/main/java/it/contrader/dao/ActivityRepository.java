@@ -5,6 +5,7 @@ import javax.transaction.Transactional;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import it.contrader.model.Category;
 import it.contrader.model.Activity;
 
 
@@ -12,6 +13,8 @@ import it.contrader.model.Activity;
 @Transactional
 public interface ActivityRepository extends CrudRepository<Activity, Long> {
 	
-	Activity findByNameAndTime(String name, Long time);
+	Category findByCategory(Category category);
+	
+	Activity findByCategoryAndNameAndTime(Category category,String name, Long time);
 
 }

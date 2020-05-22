@@ -12,6 +12,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Activity {
 	
+	@ManyToOne
+	private Tool activitytool;
+	
+	@ManyToOne
+	private Category category;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
