@@ -13,7 +13,8 @@ public class ActivityConverter extends AbstractConverter<Activity, ActivityDTO> 
 	public Activity toEntity(ActivityDTO activityDTO) {
 		Activity activity = null;
 		if (activityDTO != null) {
-			activity = new Activity(activityDTO.getTool(), activityDTO.getId(), activityDTO.getName(), activityDTO.getTime());
+			activity = new Activity(activityDTO.getCategory(), activityDTO.getTool(),
+			activityDTO.getId(), activityDTO.getName(), activityDTO.getTime());
 		}
 		return activity;
 	}
@@ -22,7 +23,8 @@ public class ActivityConverter extends AbstractConverter<Activity, ActivityDTO> 
 	public ActivityDTO toDTO(Activity activity) {
 		ActivityDTO activityDTO = null;
 		if (activity != null) {
-			activityDTO = new ActivityDTO(activity.getTool(), activity.getId(), activity.getName(), activity.getTime());
+			activityDTO = new ActivityDTO(activity.getCategory(), activity.getTool(), 
+			activity.getId(), activity.getName(), activity.getTime());
 			
 		}
 		return activityDTO;

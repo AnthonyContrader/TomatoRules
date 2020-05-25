@@ -13,6 +13,9 @@ import lombok.NoArgsConstructor;
 public class Activity {
 	
 	@ManyToOne
+	private Category category;
+
+	@ManyToOne
 	private Tool tool;
 	
 	@Id

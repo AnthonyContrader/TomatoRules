@@ -3,6 +3,7 @@ package it.contrader.dto;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
+import it.contrader.model.Category;
 import it.contrader.model.Tool;
 
 import lombok.AllArgsConstructor;
@@ -14,6 +15,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 public class ActivityDTO {
+	
+	private Category category;
 	
 	private Tool tool;
 	
