@@ -49,8 +49,8 @@
             <input [(ngModel)]="category.description">
           </td>
           <td>
-            <select [(ngModel)]="category.tool.name">
-              <option *ngFor="let tool of tools" [ngValue]="tool.name">{{tool.name}}</option>
+            <select [(ngModel)]="category.tool.id">
+              <option *ngFor="let tool of tools" [ngValue]="tool.id">{{tool.name}}</option>
             </select>
           </td>
           <td>
