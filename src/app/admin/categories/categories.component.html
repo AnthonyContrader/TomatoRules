@@ -35,7 +35,7 @@
             </select>
           </td>
           <td>
-            <button type="button" class="btn btn-success" (click)="insert(categorytoinsert)">Insert</button>
+            <button type="button" class="btn btn-success" (click)="insert(categorytoinsert);clear()">Insert</button>
           </td>
           <td>
             <button type="button" class="btn btn-danger" (click)="clear()">Clear</button>
@@ -49,7 +49,9 @@
             <input [(ngModel)]="category.description">
           </td>
           <td>
-            <input [(ngModel)]="category.tool.name">
+            <select [(ngModel)]="category.tool.name">
+              <option *ngFor="let tool of tools" [ngValue]="tool.name">{{tool.name}}</option>
+            </select>
           </td>
           <td>
             <button type="button" class="btn btn-info" (click)=update(category)>Save</button>
