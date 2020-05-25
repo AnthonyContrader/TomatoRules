@@ -16,6 +16,9 @@
             Tool
           </th>
           <th>
+            Category
+          </th>
+          <th>
             Edit
           </th>
           <th>
@@ -32,6 +35,11 @@
           <td>
             <select [(ngModel)]="activitytoinsert.tool" >
               <option *ngFor="let tool of tools" [ngValue]="tool">{{tool.name}}</option>
+            </select>
+          </td>
+          <td>
+            <select [(ngModel)]="activitytoinsert.category">
+              <option *ngFor="let category of categories" [ngValue]="category">{{category.name}}</option>
             </select>
           </td>
           <td>
@@ -58,6 +66,11 @@
             <!--
             <input [(ngModel)]="activity.tool.name">
             -->
+          </td>
+          <td>
+            <select [(ngModel)]="activity.category.id">
+                <option *ngFor="let category of categories" [ngValue]="category.id">{{category.name}}</option>
+              </select>
           </td>
           <td>
             <button (click)="update(activity)">Save</button>
