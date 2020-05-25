@@ -14,33 +14,37 @@ img{
 
 input, input:hover, input::selection, input:checked, input:focus{
     border: 0;
-    background-color: rgb(165, 37, 62);
-    border-radius: 0;
+    background-color: rgba(218, 33, 23, 0.774);
+    border-radius: 25px;
     color: white;
-    border-bottom: 1px solid crimson;
+    border-bottom: 1px solid #34F156;
     margin: 0px; 
 }
 
 .container-fluid{
-    background-color: white;
+    background-image: url("../../assets/Tecnica-del-Pomodoro-Aumentare-la-propria-produttività.jpg");
     height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #F1ECE7;
 }
 input::placeholder{
     color: white;
 }
 .form-control{
 border: none;
-background-color: rgb(13, 133, 19);
+background-color: rgba(43, 195, 71, 0.76);
 color: white;
 border-bottom: 1px solid white;
+border-radius: 25px;
 }
 
 .login{
 border: none;
-background-color: darkorange;
+background-color: rgba(218, 33, 23, 0.774);
 color: white;
 border: 1px solid white;
-border-radius: 2px;
+border-radius: 25px;
 padding-top: 10px;
 padding-right: auto;
 padding-bottom: 10px;
@@ -49,5 +53,5 @@ padding-left: auto;
 
 p{
 font-size: 14px;
-color: white;
+color: black;
 }

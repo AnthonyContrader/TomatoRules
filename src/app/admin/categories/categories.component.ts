@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService} from 'src/service/category.service';
 import { CategoryDTO} from 'src/dto/categorydto';
-import { ToolDTO } from 'src/dto/tooldto';
 import { ToolService } from 'src/service/tool.service';
+import { ToolDTO } from 'src/dto/tooldto';
 
 
 @Component({

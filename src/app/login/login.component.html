@@ -1,7 +1,6 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-7">
-      <img src="../../assets/Pomodoro.png" alt="logo">
     </div>
     <div class="col-md-5">
       <form #f="ngForm">
@@ -12,8 +11,8 @@
         <div class="form-group">
           <input class="form-control" type="password" id="pass" name="password" placeholder="Password" ngModel>
         </div>
-        <button type="submit" (click)="login(f)">Login</button>
-        <button type="submit">Sign Up</button>
+        <button type="submit" class="btn btn-danger" (click)="login(f)">Login</button> &nbsp;
+        <button type="submit" class="btn btn-danger" >Sign Up</button>
       </form>
     </div>
   </div>
