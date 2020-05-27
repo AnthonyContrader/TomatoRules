@@ -1,8 +1,8 @@
 form{
-    margin-top:270px;
-    width: 55%;
+    /*margin-top:270px;*/
+    /*width: 55%;*/
     padding: 10px;
-    border-radius:0;
+    border-radius:10px;
     border-color: crimson;
 }
 
@@ -21,6 +21,15 @@ input, input:hover, input::selection, input:checked, input:focus{
     margin: 0px; 
 }
 
+#mondo{
+    background-image: url("../../assets/pomodorino.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #F1ECE7;
+}
+
+/*
 .container-fluid{
     background-image: url("../../assets/Tecnica-del-Pomodoro-Aumentare-la-propria-produttività.jpg");
     height: 100vh;
@@ -28,30 +37,50 @@ input, input:hover, input::selection, input:checked, input:focus{
     background-repeat: no-repeat;
     background-color: #F1ECE7;
 }
+*/
+
 input::placeholder{
     color: white;
 }
+
+/*
 .form-control{
-border: none;
-background-color: rgba(43, 195, 71, 0.76);
-color: white;
-border-bottom: 1px solid white;
-border-radius: 25px;
+    border: none;
+    background-color: rgba(43, 195, 71, 0.76);
+    background-color:blue;
+    color: white;
+    border-bottom: 1px solid white;
+    border-radius: 25px;
+    text-align: center;
+    box-pack: center;
+}
+*/
+
+.form-middle {
+    border: none;
+    background-color: rgba(43, 195, 71, 0.76);
+    color: white;
+    border-bottom: 1px solid white;
+    border-radius: 25px;
+    text-align: center;
+    box-pack: center;
 }
 
+/*
 .login{
-border: none;
-background-color: rgba(218, 33, 23, 0.774);
-color: white;
-border: 1px solid white;
-border-radius: 25px;
-padding-top: 10px;
-padding-right: auto;
-padding-bottom: 10px;
-padding-left: auto;
+    border: none;
+    background-color: rgba(218, 33, 23, 0.774);
+    color: white;
+    border: 1px solid white;
+    border-radius: 25px;
+    padding-top: 10px;
+    padding-right: auto;
+    padding-bottom: 10px;
+    padding-left: auto;
 }
+*/
 
 p{
-font-size: 14px;
-color: black;
+    font-size: 14px;
+    color: black;
 }

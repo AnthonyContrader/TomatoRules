@@ -1,19 +1,39 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-7">
-    </div>
-    <div class="col-md-5">
-      <form #f="ngForm">
-        <p>Please insert username and password to Login or Sign Up</p>
-        <div class="form-group">
-          <input class="form-control" type="text" id="user" name="username" placeholder="Username" ngModel>
-        </div>
-        <div class="form-group">
-          <input class="form-control" type="password" id="pass" name="password" placeholder="Password" ngModel>
-        </div>
-        <button type="submit" class="btn btn-danger" (click)="login(f)">Login</button> &nbsp;
-        <button type="submit" class="btn btn-danger" >Sign Up</button>
-      </form>
-    </div>
+<!--
+<div class="container-fluid" style="background-color:aqua;">
+  <div class="col-md-7">
   </div>
+  <div class="col-md-5">
+  </div>
+-->
+
+<div id="mondo" style="
+  position: fixed;
+  top: 0%;
+  height: 100%;
+  left: 0%;
+  width: 100%;
+">
 </div>
+  
+<form #f="ngForm" style="
+    position:   fixed;
+    top:        70%;
+    height:     25%;
+    left:       18%;
+    width:      64%;
+    text-align: center;
+  ">
+    <p style="font-size:12pt;font-family:sans-serif;">Please insert username and password</p>
+    <div class="form-group" style="text-align:center;box-pack:center;">
+      <input class="form-middle" type="text" id="user" name="username" placeholder="Username" ngModel style="width:60%;font-size:12pt;">
+    </div>
+    <div class="form-group" style="text-align:center;">
+      <input class="form-middle" type="password" id="pass" name="password" placeholder="Password" ngModel style="width:60%;font-size:12pt;">
+    </div>
+    <button type="submit" class="btn btn-danger" style="font-size:12pt;box-shadow: -3px 1px 2px black;" (click)="login(f)">Login</button> &nbsp;
+    <button type="submit" class="btn btn-danger" style="font-size:12pt;box-shadow: -3px 1px 2px black;" >Sign Up</button>
+</form>
+
+<!--
+</div>
+-->
