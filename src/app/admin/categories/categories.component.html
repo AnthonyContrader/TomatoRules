@@ -6,6 +6,7 @@
     <div class="col-md-10">
      <h1>Categories</h1>
      <table>
+       <thead>
         <tr>
           <th>
             Name
@@ -23,6 +24,8 @@
             Category
           </th>
         </tr>
+      </thead>
+        <tbody>
         <tr>
           <td>
             <input placeholder="name" [(ngModel)]="categorytoinsert.name">
@@ -36,10 +39,10 @@
             </select>
           </td>
           <td>
-            <button type="button" class="btn btn-success" (click)="insert(categorytoinsert);clear()">Insert</button>
+            <button type="button" class="btn btn-danger" style="font-size:12pt;box-shadow: -3px 1px 2px black;" (click)="insert(categorytoinsert);clear()">Insert</button>
           </td>
           <td>
-            <button type="button" class="btn btn-danger" (click)="clear()">Clear</button>
+            <button type="button" class="btn btn-danger" style="font-size:12pt;box-shadow: -3px 1px 2px black;" (click)="clear()">Clear</button>
           </td>
         </tr>
         <tr *ngFor="let category of categories">
@@ -55,12 +58,22 @@
             </select>
           </td>
           <td>
-            <button type="button" class="btn btn-info" (click)=update(category)>Save</button>
+            <button type="button" class="btn btn-danger" style="font-size:12pt;box-shadow: -3px 1px 2px black;" (click)=update(category)>Save</button>
           </td>
           <td>
-            <button type="button" class="btn btn-danger" (click)="delete(category)">Delete</button>
+            <button type="button" class="btn btn-danger" style="font-size:12pt;box-shadow: -3px 1px 2px black;" (click)="delete(category)">Delete</button>
           </td>
         </tr>
+      </tbody>
+      <tfoot>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tfoot>
       </table>
     </div>
     <div class="col-md-1">

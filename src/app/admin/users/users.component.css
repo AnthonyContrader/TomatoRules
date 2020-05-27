@@ -8,40 +8,34 @@ table {
 	width: 100%;
 	float: left;
 	border-width: 0px;
+	border-radius:13px;
+	background-color: rgb(124, 124, 124);
+	box-shadow: 0 0 0 1px #666;
 
+}
+th,td {
+	text-align: center;
+    padding: 6px;
 }
 tr {
 	background-color: transparent;
-	border-radius: 25px 25px 0px 0px;
 }
 tbody > tr:nth-child(even) {
-	background-color: #f2f2f2;
+	background-color: #f2f2f2be;
 }
 tbody > tr:nth-child(odd) {
-	background-color: #ffffff;
-}
-th, td {
-	text-align: center;
-	padding: 2px;
+	background-color: white;
 }
 
-td{
+td {
     font-size: 16px;
 }
 
-
-/*tr:nth-child(even) {
-	background-color: rgba(218, 33, 23, 0.774);
-
-}
-*/
 th {
-	background-color: #5B5B5B;
-	color: #ffffff;
+    color: #ffffff;
 }
-
 a:hover {
-	color: #ffffff;
+	color: #999999;
 }
 
 input, select{
@@ -50,16 +44,9 @@ input, select{
 }
 
 input:hover,  input:active, input:focus{
-    border: 2px solid #5B5B5B;
-}
-
-button {
-	background-color: #5B5B5B ;
-	border-radius: 25px;
-	color: #ffffff;
+    border: 2px solid crimson;
 }
 
 button:hover{
-	background-color: black;
-	border-radius: 25px;
+	background-color: crimson;
 }

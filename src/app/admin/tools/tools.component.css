@@ -7,26 +7,32 @@ table {
 	border-collapse: collapse;
 	width: 100%;
 	float: left;
-	border-radius: 4px;
-	-moz-border-radius: 4px;
+	border-width: 0px;
+	border-radius:13px;
+	background-color: rgb(124, 124, 124);
+	box-shadow: 0 0 0 1px #666;
 }
 
 th, td {
 	text-align: center;
-	padding: 2px;
+	padding: 6px;
+}
+
+tr {
+	background-color: transparent;
+}
+tbody > tr:nth-child(even) {
+	background-color: #f2f2f2be;
+}
+tbody > tr:nth-child(odd) {
+	background-color: white;
 }
 
 td{
     font-size: 16px;
 }
 
-
-tr:nth-child(even) {
-	background-color: #ffdb99;
-}
-
 th {
-	background-color: darkorange;
 	color: #ffffff;
 }
 

@@ -6,6 +6,7 @@
     <div class="col-md-10">
       <h1>Users</h1>
       <table>
+        <thead>
         <tr>
           <th>
             Username
@@ -23,7 +24,9 @@
             User
           </th>
         </tr>
-        <tr>
+        </thead>
+        <tbody>
+          <tr>
           <td>
             <input placeholder="username" [(ngModel)]="usertoinsert.username">
           </td>
@@ -37,10 +40,10 @@
             </select>
           </td>
           <td>
-            <button (click)="insert(usertoinsert)" >Insert</button>
+            <button class="btn btn-danger" style="font-size:12pt;box-shadow: -3px 1px 2px black;" (click)="insert(usertoinsert)" >Insert</button>
           </td>
           <td>
-            <button (click)="clear()">Clear</button>
+            <button class="btn btn-danger" style="font-size:12pt;box-shadow: -3px 1px 2px black;" (click)="clear()">Clear</button>
           </td>
         </tr>
         <tr *ngFor="let user of users">
@@ -57,12 +60,22 @@
             </select>
           </td>
           <td>
-            <button (click)=update(user) >Save</button>
+            <button class="btn btn-danger" style="font-size:12pt;box-shadow: -3px 1px 2px black;" (click)=update(user) >Save</button>
           </td>
           <td>
-            <button (click)="delete(user)" >Delete</button>
+            <button class="btn btn-danger" style="font-size:12pt;box-shadow: -3px 1px 2px black;" (click)="delete(user)" >Delete</button>
           </td>
         </tr>
+      </tbody>
+      <tfoot>
+				<tr>
+					<td></td>
+					<td></td>
+          <td></td>
+          <td></td>
+					<td></td>
+        </tr>
+      </tfoot>
       </table>
     </div>
     <div class="col-md-1">
