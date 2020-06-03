@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.contrader.tomatorulesmicroservices",
+      "nativeLanguage": "it"
+    },
+    "jhipsterVersion": "5.2.1",
+    "applicationType": "gateway",
+    "baseName": "gateway",
+    "packageName": "com.contrader.tomatorulesmicroservices",
+    "packageFolder": "com/contrader/tomatorulesmicroservices",
+    "serverPort": "8082",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false,
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "consul",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "4859ce78b151f9db5189dfca99ef476bffb15cc3",
+    "clientFramework": "angularX",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "protractor"
+    ],
+    "jhiPrefix": "jhi",
+    "enableTranslation": true,
+    "nativeLanguage": "it",
+    "languages": [
+      "it",
+      "en"
+    ]
+  }
+}
